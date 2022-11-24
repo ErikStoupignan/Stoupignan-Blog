@@ -3,6 +3,10 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  validates :author, presence: true
+  validates :title, presence: true
+  validates :text, presence: true
+
   def last_five_comments
     comments.last(5)
   end
