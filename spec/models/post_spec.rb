@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
     end
 
     it 'most recent post length should returns zero' do
-      expect(@post.five_recent_comments.length).to be 0
+      expect(@post.last_five_comments.length).to be 0
     end
 
     it 'likes count validation should return true' do

@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :name, presence: true, allow_blank: false
 
   def recent_post
-    posts.order('created_at Desc').limit(3)
+    posts.order(created_at: :desc).limit(3)
   end
 end

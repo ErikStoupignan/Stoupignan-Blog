@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   validates :like_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def last_five_comments
-    comments.last(5)
+    comments.order(created_at: :desc).limit(5)
   end
 
   private
