@@ -1,14 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
-# ruby "2.7.0"
-
-# Rubocop - linters
-gem 'rubocop', '>= 1.0', '< 2.0'
-
-# FFI is a required pre-requisite for Windows or posix_spawn support in the ChildProcess gem.
-gem 'ffi', '~> 1.15', '>= 1.15.5'
+ruby '3.1.3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
@@ -44,10 +37,11 @@ gem 'jbuilder'
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
+gem 'tzinfo-data'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
+
+gem 'ffi'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -75,6 +69,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'rubocop', '>= 1.0', '< 2.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
