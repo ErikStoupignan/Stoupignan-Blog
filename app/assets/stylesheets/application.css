@@ -13,3 +13,100 @@
  *= require_tree .
  *= require_self
  */
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: black !important;
+}
+
+.title_page {
+  text-align: center;
+}
+
+.section_container {
+  margin: 10px 0 10px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  flex-direction: row;
+  width: 80%;
+}
+
+.group:hover {
+  background-color: rgba(79, 80, 79, 0.274);
+  border-radius: 15px;
+}
+
+.container_photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  min-width: 100px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.user_photo {
+  height: 300px;
+}
+
+.user_data_container {
+  width: 80%;
+  height: 120px;
+}
+
+.margin_10px {
+  margin: 10px auto !important;
+}
+
+.padding_10px {
+  padding: 10px;
+}
+
+.general_container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.border {
+  border: 2px solid rgba(0, 0, 0, 0.616);
+  border-radius: 10px;
+}
+
+.display_flex {
+  display: flex;
+  justify-content: right;
+}
+
+.flex_direction_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.user_name {
+  padding: 0 10px 0 10px;
+}
+
+.post_counter {
+  text-align: right;
+  padding: 0 10px 0 10px;
+}
+
+.button_post {
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+}
