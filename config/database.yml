@@ -25,8 +25,8 @@ development:
   <<: *default
   database: stoupignan
   # encoding: unicode
-  username: postgres
-  password: Chivas11!
+  username: <%= ENV["USER_NAME"] %>
+  password: <%= ENV["PASSWORD"] %>
   # host: localhost
   # port: 5432
 
@@ -65,8 +65,8 @@ test:
   <<: *default
   database: stoupignan_test
   # adapter: postgresql
-  username: postgres
-  password: Chivas11!
+  username: <%= ENV["USER_NAME"] %>
+  password: <%= ENV["PASSWORD"] %>
 
 
 # As with config/credentials.yml, you never want to store sensitive information,
