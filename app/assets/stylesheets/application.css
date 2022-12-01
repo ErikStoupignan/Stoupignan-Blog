@@ -38,7 +38,12 @@
   justify-content: space-between;
   margin: 0 auto;
   flex-direction: row;
-  width: 80vw;
+  width: 80%;
+ }
+
+ .group:hover {
+  background-color: rgba(79, 80, 79, 0.274);
+  border-radius: 15px;
  }
 
  .container_photo {
@@ -60,8 +65,32 @@
   height: 120px;
  }
 
+ .margin_10px {
+  margin: 10px auto !important;
+ }
+
+ .padding_10px {
+  padding: 10px;
+ }
+
+ .general_container {
+  width: 80vw;
+  margin: 0 auto;
+ }
+
  .border {
-  border: 3px solid #000;
+  border: 2px solid rgba(0, 0, 0, 0.616);
+  border-radius: 10px;
+ }
+
+ .display_flex {
+  display: flex;
+  justify-content: right;
+ }
+
+ .flex_direction_column {
+  display: flex;
+  flex-direction: column;
  }
 
  .user_name {
@@ -72,3 +101,10 @@
   text-align: right;
   padding: 0 10px 0 10px;
  }
+
+ .button_post {
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+ }
+

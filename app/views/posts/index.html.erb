@@ -1,33 +1,42 @@
-<%= Date.today %>
-<h1> Index Posts </h1>
+<h1 class="title_page"> Index Posts </h1>
 
-<section>
-  <div>
-    <img src='<%= @posts.photo %>' alt='User photo' height='100'>
+<section class="section_container container">
+  <div class="container_photo border">
+    <img src='<%= @posts.photo %>' alt='User photo' class="user_photo">
   </div>
 
-  <div>
-    <h2><%= @posts.name %></h2>
-    <h2>Number of posts: <%= @posts.posts_counter %></h2>
+  <div class="user_data_container border">
+    <h2 class="user_name"><%= @posts.name %></h2>
+    <h2 class="post_counter">Number of posts: <%= @posts.posts_counter %></h2>
   </div>
-</section>
-
-<section>
-  <h3>Bio</h3>
-  <p><%= @posts.bio %></p>
 </section>
 
 <% @posts.posts.each_with_index do |post, index| %>
-  <%= link_to user_post_path(post.id, post) do %>
-    <p>Post: <%= index + 1 %></p>
-    <p><%= post.text %></p>
-    <p>Likes: <%= post.likes_counter %></p>
-    <p>Comments: <%= post.comments_counter %></p>
-  
 
-    <% post.last_five_comments.each do |comments|%>
-      <p><%= comments.author.name %>:<%= comments.text %></p>
-    <% end %>
+  <%= link_to user_post_path(post.id, post) do %>
+
+    <div class="general_container margin_10px">
+
+      <div class="border">
+        <h3>Post: <%= index + 1 %></h3>
+        <p><%= post.text %></p>
+
+        <div class="display_flex">
+          <p>Likes: <%= post.likes_counter %> Comments: <%= post.comments_counter %></p>
+        </div>
+
+      </div>
+
+      <div class="border">
+        <% post.last_five_comments.each do |comments|%>
+          <p><%= comments.author.name %>:<%= comments.text %></p>
+        <% end %>
+      </div>
+
+    <div>
+
   <% end %>
 
 <% end %>
+
+  <button class="button_post margin_10px">Pagination</button>

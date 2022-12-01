@@ -1,4 +1,4 @@
-  <section class="container">
+  <section class="container margin_10px padding_10px">
     <div class="border container_photo">
       <img src='<%= @user.photo %>' alt='User photo' class="user_photo">
     </div>
@@ -9,18 +9,21 @@
     </div>
   </section>
 
-  <section class="border container">
+  <section class="border general_container margin_10px padding_10px">
     <h3>Bio</h3>
     <p><%= @user.bio %></p>
   </section>
 
   <% @user.posts.each_with_index do |post, index| %>
     <%= link_to user_posts_path(post.id) do %> 
-      <div class="border"> 
-        <p>Post: <%= index + 1 %></p>
+      <div class="border general_container margin_10px padding_10px group"> 
+        <h3>Post: #<%= index + 1 %></h3>
         <p><%= post.text %></p>
-        <p>Likes: <%= post.likes_counter %></p>
-        <p>Comments: <%= post.comments_counter %></p>
+        <div class=" display_flex">
+          <p>Likes: <%= post.likes_counter %> Comments: <%= post.comments_counter %></p>
+        </div>
       </div>
     <% end %>
   <% end %>
+
+  <button class="button_post margin_10px">See all posts</button>

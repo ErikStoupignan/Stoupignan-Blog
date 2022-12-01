@@ -1,14 +1,18 @@
-<%= Date.today %>
-<h1> This page will show all the posts from an user </h1>
+  <section class="border container margin_10px padding_10px flex_direction_column">
+    <div class="">
+      <h3>Post: <%= @post.id %> by <%= @post.author.name %></h2>
+      <p class="display_flex">Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></p>
+    </div>
 
-  <section>
-    <p>Post: <%= @post.id %> by <%= @post.author.name %></p>
-    <p>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></p>
-    <p><%= @post.text %></p>
+    <p class=""><%= @post.text %></p>
+  
   </section>
+  
+  <section class="border container margin_10px padding_10px flex_direction_column">
 
-  <section>
     <% @post.comments.each do |comment|%>
       <p><%= comment.author.name %>: <%= comment.text %></p>
     <% end %>
+    
   </section>
+  
