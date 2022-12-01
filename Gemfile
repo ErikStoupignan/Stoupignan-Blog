@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
+# Add Figaro gem to code the database password
+gem 'figaro'
+
 # Gem for rails-controller-testing
 gem 'rails-controller-testing', '~> 0.0.3'
 
