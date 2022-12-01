@@ -1,8 +1,25 @@
 <%= Date.today %>
-<h1> Users: <%= @users.count %></h1>
+<h1 class="title_page">All users list</h1>
 
 <% @users.each do |user| %>
-  <div>
-    <h2><%= user.name %> - <%= user.bio %></h2>
-  </div>
+
+  <section class="section_container">
+    <%= link_to user_path(user.id) do %>
+    
+      <article class="container">
+
+        <div class="container_photo border">
+          <img src='<%= user.photo %>' alt='User photo' class="user_photo">
+        </div>
+
+        <div class="user_data_container border">
+          <h2 class="user_name"><%= user.name %></h2>
+          <h4 class="post_counter">Number of posts: <%= user.posts_counter %></h4>
+        </div>
+
+      </article>
+      
+    <% end %>
+  </section>
+
 <% end %>

@@ -1,2 +1,14 @@
 <%= Date.today %>
 <h1> This page will show all the posts from an user </h1>
+
+  <section>
+    <p>Post: <%= @post.id %> by <%= @post.author.name %></p>
+    <p>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></p>
+    <p><%= @post.text %></p>
+  </section>
+
+  <section>
+    <% @post.comments.each do |comment|%>
+      <p><%= comment.author.name %>: <%= comment.text %></p>
+    <% end %>
+  </section>

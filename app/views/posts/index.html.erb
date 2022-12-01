@@ -1,3 +1,33 @@
 <%= Date.today %>
 <h1> Index Posts </h1>
 
+<section>
+  <div>
+    <img src='<%= @posts.photo %>' alt='User photo' height='100'>
+  </div>
+
+  <div>
+    <h2><%= @posts.name %></h2>
+    <h2>Number of posts: <%= @posts.posts_counter %></h2>
+  </div>
+</section>
+
+<section>
+  <h3>Bio</h3>
+  <p><%= @posts.bio %></p>
+</section>
+
+<% @posts.posts.each_with_index do |post, index| %>
+  <%= link_to user_post_path(post.id, post) do %>
+    <p>Post: <%= index + 1 %></p>
+    <p><%= post.text %></p>
+    <p>Likes: <%= post.likes_counter %></p>
+    <p>Comments: <%= post.comments_counter %></p>
+  
+
+    <% post.last_five_comments.each do |comments|%>
+      <p><%= comments.author.name %>:<%= comments.text %></p>
+    <% end %>
+  <% end %>
+
+<% end %>

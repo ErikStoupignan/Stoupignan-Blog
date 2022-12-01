@@ -1,2 +1,26 @@
-<h1>This is the method show Users!</h1>
+  <section class="container">
+    <div class="border container_photo">
+      <img src='<%= @user.photo %>' alt='User photo' class="user_photo">
+    </div>
 
+    <div class="border user_data_container">
+      <h2 class="user_name"><%= @user.name %></h2>
+      <h2 class="post_counter">Number of posts: <%= @user.posts_counter %></h2>
+    </div>
+  </section>
+
+  <section class="border container">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </section>
+
+  <% @user.posts.each_with_index do |post, index| %>
+    <%= link_to user_posts_path(post.id) do %> 
+      <div class="border"> 
+        <p>Post: <%= index + 1 %></p>
+        <p><%= post.text %></p>
+        <p>Likes: <%= post.likes_counter %></p>
+        <p>Comments: <%= post.comments_counter %></p>
+      </div>
+    <% end %>
+  <% end %>
