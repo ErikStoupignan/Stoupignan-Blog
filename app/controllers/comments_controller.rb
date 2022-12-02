@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+  def new
+    current_user
+  end
+
   def create
     @comment = current_user.comments.new(comment_params)
     @comment.post_id = params[:post_id]
