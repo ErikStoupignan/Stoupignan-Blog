@@ -1,0 +1,23 @@
+<h2>Añadir producto</h2>
+
+<%= form_with model: @post, url: user_posts_path do |form| %>
+
+  <section class="border">
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div>
+      <%= form.label :text %>
+      <%= form.text_area :text %>
+    </div>
+
+    <%= form.submit %>
+  </section>
+
+<% end %>
+
+<%= link_to users_path do %>
+  <span class="border">Exit here</span>
+<% end %>

@@ -14,7 +14,7 @@ RSpec.describe 'Controller management for POSTS/INDEX', type: :request do
   end
 
   it 'esponse body includes correct placeholder text' do
-    expect(response.body).to include '2022'
+    expect(response.body).to include 'All users list'
   end
 end
 

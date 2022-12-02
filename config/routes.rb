@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get '/users/:user_id/posts/:id', to: 'posts#show', as: :user_post
 
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :show, :new, :create] do
+    end
   end
 end
