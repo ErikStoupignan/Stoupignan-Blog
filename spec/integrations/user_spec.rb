@@ -13,14 +13,15 @@ RSpec.describe 'testing users', type: :feature do
       @comment2 = Comment.create(text: 'Comment another', author: User.first, post: @post1)
       @comment3 = Comment.create(text: 'Comment new', author: User.first, post: @post1)
     end
-    it "shows user's profile picture" do
-      visit(user_path(@user1.id))
-      expect(page).to have_css('img[src*="https://picsum.photos/seed/picsum/536/354"]')
-    end
 
     it 'shows the users username' do
       visit(user_path(@user1.id))
       expect(page).to have_content('Carlitos')
+    end
+
+    it "shows user's profile picture" do
+      visit(user_path(@user1.id))
+      expect(page).to have_css('img[src*="https://picsum.photos/seed/picsum/536/354"]')
     end
 
     it 'shows number of posts of user has written' do
@@ -80,12 +81,18 @@ RSpec.describe 'user_path', type: :feature do
       expect(page).to have_content('Comments: 3')
     end
 
-    it 'redirects to post show page when cliked' do
+    it 'When I click to see all posts, it redirects me to the users posts index page' do
       @user1 = User.create(name: 'Tom', photo: 'https://picsum.photos/seed/picsum/536/354', bio: 'Teacher from Mexico.')
       @post1 = Post.create(title: 'First Post', text: 'This is my first post', likes_counter: 3, author: @user1)
       visit "/users/#{@user1.id}/posts"
       click_on Post
       expect(page).to have_current_path(user_post_path(@user1.id, @post1.id))
+    end
+
+    it "When I click to see all posts, it redirects me to the user's post's index page." do
+      visit user_path(User.first)
+      click_link 'See all posts'
+      expect(page).to have_content('Index Posts')
     end
   end
 end
