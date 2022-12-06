@@ -110,3 +110,14 @@ a:hover {
   margin: 0 auto;
   width: 30vw;
 }
+
+.new.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 5%;
+}
+
+.field {
+  padding: 2%;
+}
