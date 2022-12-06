@@ -10,7 +10,7 @@
   
   <section class="border container margin_10px padding_10px flex_direction_column">
 
-    <% @post.comments.each do |comment|%>
+    <% @post.comments.includes(:author).each do |comment|%>
       <p><%= comment.author.name %>: <%= comment.text %></p>
     <% end %>
     
