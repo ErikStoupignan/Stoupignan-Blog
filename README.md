@@ -189,6 +189,12 @@ Example:
 - Twitter: [@Erik_Stoupignan](https://twitter.com/Erik_Stoupignan)
 - LinkedIn: [Erik Stoupignan Sánchez Beltrán](https://www.linkedin.com/in/erik-sanchez-beltran/)
 
+👤 Amalia Gomez Moro
+
+GitHub: [@AmaliaGM](https://github.com/AmaliaGM)
+Twitter: [@AmaliaGomezMoro](https://twitter.com/AmaliaGomezMoro)
+LinkedIn: [@Maria-Amalia-Gomez-Moro](https://www.linkedin.com/in/Maria-Amalia-Gomez-Moro/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
