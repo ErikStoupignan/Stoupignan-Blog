@@ -119,5 +119,15 @@ a:hover {
 }
 
 .field {
-  padding: 2%;
+  margin: 2px;
+  width: 100%;
+}
+
+input {
+  width: 90%;
+}
+
+.actions {
+  margin-left: 3%;
+  padding: 3%;
 }
