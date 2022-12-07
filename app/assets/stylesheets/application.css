@@ -110,3 +110,24 @@ a:hover {
   margin: 0 auto;
   width: 30vw;
 }
+
+.new.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 5%;
+}
+
+.field {
+  margin: 2px;
+  width: 100%;
+}
+
+input {
+  width: 90%;
+}
+
+.actions {
+  margin-left: 3%;
+  padding: 3%;
+}
