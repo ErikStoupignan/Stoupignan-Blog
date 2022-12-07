@@ -27,5 +27,13 @@
     <%= render "shared/add_comment"%>
   </section>
 
+  <section>
+    <% if can? :destroy, @post %>
+      <%= button_to "Delete Post", user_post_path(@post.author, @post), method: :delete %>
+    <% end %>
+  </section>
+
+
+  <%= flash.inspect %>
 
   
