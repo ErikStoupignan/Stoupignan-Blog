@@ -15,14 +15,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    user = User.find(post.author_id)
     @comment = Comment.find(params[:id])
+    @post = Post.find(@comment.post_id)
+    @post.comments_counter -= 1
     @comment.destroy
-    post.destroy
-    user.posts_counter -= 1
-    user.save
-    redirect_to user_url(user)
+    redirect_to user_post_url(@post.author, @post), notice: 'Comment was successfully destroyed.'
   end
 
   private

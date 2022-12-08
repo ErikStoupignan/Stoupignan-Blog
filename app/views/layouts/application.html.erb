@@ -11,13 +11,27 @@
   </head>
 
   <body>
-    <h1>Welcome to The Blog App!</h1>
+    <h1>Welcome to The Stoupignan Blog!</h1>
+
+    <section class='links_container no_button_style border position_top_right'>
+      <span class=''>
+        <%= link_to 'Home', root_path %>
+      </span>
+    
+      <%if user_signed_in? %>
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% end %>
+      
+    </section>
+
     <%= notice %>
     <%= alert %>
+    
     <%= yield %>
-    <% if user_signed_in? %>
-    <%= button_to t('sign_out'), destroy_user_session_path, method: :delete %>
-    <% end %>
+
+    
+
+  
     <footer>Thanks for using The Blog App!</footer>
   </body>
 </html>

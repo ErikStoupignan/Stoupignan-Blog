@@ -1,4 +1,5 @@
-
-<%= form_with model: Like, url: user_post_likes_path(@post.author, @post) do |f| %>
-  <%= f.submit 'Like Post' %>
-<% end %>
+<div class=''>
+  <%= form_with model: Like, url: user_post_likes_path(@post.author, @post) do |f| %>
+    <%= f.submit 'Like Post' %>
+  <% end %>
+</div>
