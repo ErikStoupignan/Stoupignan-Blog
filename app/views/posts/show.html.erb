@@ -9,21 +9,16 @@
   </section>
   
   <section class="border container margin_10px padding_10px flex_direction_column">
-
-
-
   <% @userposts.each do |comment|%>
     <p><%= comment.author.name %>: <%= comment.text %></p>
-    
-    <section>
-      <% if can? :destroy, @comment %>
-        <%= button_to "Delete Comment", user_post_comment_path(@comment.post, @comment), method: :delete %>
-      <% end %>
+  <% end %> 
+  <section>
+    <% if can? :destroy, @comment %>
+      <%= button_to "Delete Comment", user_post_comment_path(@comment.post, @comment), method: :delete %>
     <% end %>
     </section>
-    
-    </section>
-    
+  </section>
+
   <section>
     <%= render "shared/add_like"%>
   </section>
@@ -34,7 +29,7 @@
 
   <section>
     <% if can? :destroy, @post %>
-      <%= button_to "Delete Post", [@post.author, @post], method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= button_to "Delete Post", user_post_path(@post.author, @post), method: :delete %>
     <% end %>
   </section>
 
