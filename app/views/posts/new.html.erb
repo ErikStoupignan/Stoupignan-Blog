@@ -2,7 +2,7 @@
 
 <%= form_with model: @post, url: user_posts_path do |form| %>
 
-  <section class="border">
+  <section class="">
     <div>
       <%= form.label :title %>
       <%= form.text_field :title, required: true %>
@@ -18,6 +18,6 @@
 
 <% end %>
 
-<%= link_to users_path do %>
-  <span class="border">Exit here</span>
-<% end %>
+<span class="border margin_10px">
+  <%= link_to 'Exit here', users_path %>
+</span>

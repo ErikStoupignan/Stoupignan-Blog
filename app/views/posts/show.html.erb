@@ -5,27 +5,38 @@
     </div>
 
     <p class=""><%= @post.text %></p>
+
+    <%= render "shared/add_like"%>
   
   </section>
   
   <section class="border container margin_10px padding_10px flex_direction_column">
+    <% @userposts.each do |comment|%>
+      <p><%= comment.author.name %>: <%= comment.text %></p>
 
+      <div class=''>
+        <% if can? :destroy, comment %>
+          <%= button_to "Delete comment", user_post_comment_path(comment.author, comment.post, comment), method: :delete %>
+        <% end %>
+      </div>
 
-
-  <% @userposts.each do |comment|%>
-    <p><%= comment.author.name %>: <%= comment.text %></p>
-  <% end %>
-
-    
+    <% end %> 
   </section>
 
-  <section>
-    <%= render "shared/add_like"%>
+  <section class='no_button_style border links_container position_bottom_right'>
+ 
+    <div >
+        <%= render "shared/add_comment"%>
+    </div>
+
+    <% if can? :destroy, @post %>
+      <div class='border background_red'>
+          <%= button_to "Delete Post", user_post_path(@post.author, @post), method: :delete %>
+      </div>
+    <% end %>
+
   </section>
 
-  <section>
-    <%= render "shared/add_comment"%>
-  </section>
 
 
   

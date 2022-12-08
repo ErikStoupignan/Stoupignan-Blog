@@ -2,6 +2,7 @@
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
+require 'bullet'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
@@ -63,8 +64,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
-Capybara.register_driver :selenium_chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
-end
+# Capybara.register_driver :selenium_chrome do |app|
+#   Capybara::Selenium::Driver.new(app, browser: :chrome)
+# end
 
-Capybara.javascript_driver = :selenium_chrome
+# Capybara.javascript_driver = :selenium_chrome
