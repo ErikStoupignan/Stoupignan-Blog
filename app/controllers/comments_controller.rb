@@ -17,6 +17,8 @@ class CommentsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     user = User.find(post.author_id)
+    @comment = Comment.find(params[:id])
+    @comment.destroy
     post.destroy
     user.posts_counter -= 1
     user.save
