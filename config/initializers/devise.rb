@@ -11,8 +11,8 @@
 Devise.setup do |config|
 
   config.jwt do |jwt|
-    # jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
-    jwt.secret = "19cef4f5e5e3ff8265b5d2a09d56ba58f7de024f8a09f308b96a30661274fe112d962ac81894a5d3c535f4b8dcee120f6319929d676f2678da477b5b82c5865f"
+    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
+    # jwt.secret = "19cef4f5e5e3ff8265b5d2a09d56ba58f7de024f8a09f308b96a30661274fe112d962ac81894a5d3c535f4b8dcee120f6319929d676f2678da477b5b82c5865f"
   end
   
   # The secret key used by Devise. Devise uses this key to generate
