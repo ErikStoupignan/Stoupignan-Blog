@@ -13,6 +13,9 @@ gem 'cancancan'
 # Add devise gem to use authentication library
 gem 'devise'
 
+# This gem let use pasword to access the Api version
+gem 'devise-jwt'
+
 # Gem for rails-controller-testing
 gem 'rails-controller-testing', '~> 0.0.3'
 
