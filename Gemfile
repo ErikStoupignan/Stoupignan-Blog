@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 # ruby '3.1.2'
 
+# Create Api documentation
+gem 'rswag'
+
 # Add Figaro gem to code the database password
 gem 'figaro'
 
